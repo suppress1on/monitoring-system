@@ -20,12 +20,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install --upgrade -r requirements.txt
 
       - name: Run webhook server
         run: |
           nohup python3 webhook/server.py &
-          sleep 3  # подождать, пока сервер стартанёт
+          sleep 3
 
       - name: Run Prometheus check
         run: curl -I http://localhost:9090
