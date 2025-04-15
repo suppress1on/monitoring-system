@@ -1,0 +1,100 @@
+{
+    "dashboard": {
+      "id": null,
+      "title": "NGINX Exporter Stats",
+      "tags": ["nginx", "exporter"],
+      "timezone": "browser",
+      "panels": [
+        {
+          "type": "stat",
+          "title": "Active Connections",
+          "targets": [
+            {
+              "expr": "nginx_connections_active",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "type": "graph",
+          "title": "Requests per second",
+          "targets": [
+            {
+              "expr": "rate(nginx_http_requests_total[1m])",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "rps",
+              "refId": "A"
+            }
+          ],
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 4,
+            "y": 0
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Reading",
+          "targets": [
+            {
+              "expr": "nginx_connections_reading",
+              "refId": "A"
+            }
+          ],
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 4
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Writing",
+          "targets": [
+            {
+              "expr": "nginx_connections_writing",
+              "refId": "A"
+            }
+          ],
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 4,
+            "y": 4
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Waiting",
+          "targets": [
+            {
+              "expr": "nginx_connections_waiting",
+              "refId": "A"
+            }
+          ],
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 8,
+            "y": 4
+          }
+        }
+      ],
+      "schemaVersion": 26,
+      "version": 1,
+      "refresh": "5s"
+    },
+    "overwrite": false
+  }  
