@@ -1,3 +1,5 @@
 webhook/.secrets.env
+.secrets.env
 grafana/actions-runner/
 actions-runner/
+webhook/__pycache__

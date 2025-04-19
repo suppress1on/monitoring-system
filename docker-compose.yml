@@ -24,8 +24,8 @@ services:
       - ./grafana/dashboards:/var/lib/grafana/dashboards
     environment:
     # instead of "admin" write your login and password
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=GRFN_USER
+      - GF_SECURITY_ADMIN_PASSWORD=GRFN_PASSWORD
     restart: unless-stopped
     depends_on:
       - prometheus
